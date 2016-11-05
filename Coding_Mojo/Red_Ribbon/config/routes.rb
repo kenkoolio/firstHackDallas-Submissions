@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :zips
   resources :addresses
   resources :service_providers
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
