@@ -17,7 +17,9 @@ class UsersController < ApplicationController
   	def create
     	@user = User.new(user_params)
     	if @user.save
+    		User.find(@user.id).update(user_level: 1)
     		session[:user_id] = @user.id
+    		#session[:user] = {id:@user.id, user_level: @user.user_level }
       		redirect_to "/users"
     	else
       		flash[:errors] = @user.errors.full_messages
@@ -42,6 +44,6 @@ class UsersController < ApplicationController
   	private
 
   	def user_params
-    	params.require(:user).permit(:first_name, :last_name, :email, :password)
+    	params.require(:users).permit(:screen_name, :email, :password, :password_confirmation)
   	end
 end
