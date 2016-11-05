@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css" media="screen" title="no title">
+    </head>
+    <body>
+
+    <div id="wrapper">
+        <div class="container">
+            <% @service_provider.each do |service| %>
+            <div class="serviceBox panel panel-default">
+
+                <div class="panel-body">
+                    <div class="col-lg-11 col-md-11 col-xl-11">
+                        <h4><%= service.name %></h4>
+                        <p>
+                            <%= service.description %>
+                            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                        </p>
+                        <div class="row">
+                            <a href="#"><%= service.website %></a>
+                        </div>
+                    </div>
+
+                    <div class="admin col-lg-1 col-md-1 col-xl-1">
+                        <!-- <%= if admin %> -->
+                        <div class="row">
+                            <a href="service_provider">edit </a>
+                        </div>
+                        <div class="row">
+                            <a href="#">delete</a>
+                        </div>
+                        <!-- <%= end %> -->
+                    </div>
+
+                </div>
+
+            </div>
+            <%  end %>
+        </div>
+    </div>
+
+    </body>
+</html>
